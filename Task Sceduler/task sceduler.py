@@ -1,11 +1,13 @@
+# Helper
 HELP = """
 help - print program information.
 add - add task in list (user input name of task)
 show - print all tasks in list.
 """
-
+# tasks list
 tasks = []
 
+# project code for implementation
 command = input("Enter your command: ")
 if command == "help":
     print(HELP)
