@@ -8,24 +8,33 @@ help - print program information.
 add - add task in list (user input name of task)
 show - print all tasks in list.
 """
-# tasks listsceduler
-tasks = []
 
-run = True
+
 # project code for implementation
-while run:
+while True:
     command = input("Enter your command: ")
     if command == "help":
         print(HELP)
-    elif command == "show":
-        print(tasks)
+
     elif command == "add":
+        date = input("Enter date: ")
         task = input("Enter name of task: ")
-        tasks.append(task)
-        print("Task add in list")
-    # elif command == "exit":
-    #     print("Спасибо за использование! До свидания!")
+
+        if date == "Today" or "today":
+            today.append(task)
+        elif date == "Tomorrow" or "tomorrow":
+            tomorrow.append(task)
+        else:
+            later.append(task)
+        print(f"Task {task} add")
+
+    elif command == "show":
+        print("Today", today)
+        print("Tomorrow", tomorrow)
+        print("Later", later )
+
+    elif command == "exit":
+        print("Спасибо за использование! До свидания!")
     else:
         print("Unknown command")
         break
-print("Goodbye!")
