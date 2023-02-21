@@ -1,14 +1,10 @@
-today = list()  # today = []
-tomorrow = list()  # tomorrow = []
-later = list()  # later = []
-
 # Helper
 HELP = """
 help - print program information.
 add - add task in list (user input name of task)
 show - print all tasks in list.
 """
-
+tasks = {}
 
 # project code for implementation
 while True:
@@ -17,24 +13,21 @@ while True:
         print(HELP)
 
     elif command == "add":
-        date = input("Enter date: ")
-        task = input("Enter name of task: ")
-
-        if date == "Today" or "today":
-            today.append(task)
-        elif date == "Tomorrow" or "tomorrow":
-            tomorrow.append(task)
+        date = input("Enter date for your task: ")
+        task = input("Enter name of the task: ")
+        # if list have date, add task in list
+        if date in tasks:
+            tasks[date].append(task)
+        # if list have not date, create date
         else:
-            later.append(task)
-        print(f"Task {task} add")
+            tasks[date] = []
+            tasks[date].append(task)
+        print(f"The task {task} was added on the {date} ")
 
     elif command == "show":
-        print("Today", today)
-        print("Tomorrow", tomorrow)
-        print("Later", later )
+        print(tasks)
 
-    elif command == "exit":
-        print("Спасибо за использование! До свидания!")
     else:
         print("Unknown command")
         break
+    print("Goodbye!")
