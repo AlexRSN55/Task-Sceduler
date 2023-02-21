@@ -15,9 +15,11 @@ while True:
     elif command == "add":
         date = input("Enter date for your task: ")
         task = input("Enter name of the task: ")
+
         # if list have date, add task in list
         if date in tasks:
             tasks[date].append(task)
+
         # if list have not date, create date
         else:
             tasks[date] = []
@@ -30,4 +32,4 @@ while True:
     else:
         print("Unknown command")
         break
-    print("Goodbye!")
+print("Goodbye!")
