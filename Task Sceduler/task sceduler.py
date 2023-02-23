@@ -3,8 +3,13 @@ HELP = """
 help - print program information.
 add - add task in list (user input name of task)
 show - print all tasks in list.
+random - add random task on date "today"
 """
-tasks = {}
+RANDOM_TASK = "Learning Python"
+
+tasks = {
+
+}
 
 # project code for implementation
 while True:
@@ -31,6 +36,12 @@ while True:
         else:
             print('No such date')
 
+    elif command == "random":
+        if "today" in tasks:
+            tasks["today"].append(RANDOM_TASK)
+        else:
+            tasks["today"] = []
+            tasks["today"].append(RANDOM_TASK)
     else:
         print("Unknown command")
         break
