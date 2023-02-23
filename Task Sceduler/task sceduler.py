@@ -1,3 +1,4 @@
+import random
 # Helper
 HELP = """
 help - print program information.
@@ -5,7 +6,7 @@ add - add task in list (user input name of task)
 show - print all tasks in list.
 random - add random task on date "today"
 """
-RANDOM_TASK = "Learning Python"
+RANDOM_TASKS = ["Python", "Linux", "Kubernetes", "Docker", "Ansible"]
 
 tasks = {}
 
@@ -37,7 +38,8 @@ while True:
             print('No such date')
 
     elif command == "random":
-        add_todo('today', RANDOM_TASK)
+        task = random.choice(RANDOM_TASKS)
+        add_todo('today', task)
     else:
         print("Unknown command")
         break
