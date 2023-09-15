@@ -1,14 +1,15 @@
 import random
 # Helper
 HELP = """
-help - print program information.
-add - add task in list (user input name of task)
-show - print all tasks in list.
-random - add random task on date "today"
+/help - print program information.
+/add - add task in list (user input name of task)
+/show - print all tasks in list.
+/random - add random task on date "today"
 """
-RANDOM_TASKS = ["Python", "Linux", "Kubernetes", "Docker", "Ansible"]
+RANDOM_TASKS = ["Python", "Linux", "Kubernetes", "Docker", "Ansible", "Git"]
 
 tasks = {}
+
 
 def add_todo(date, task):
     if date in tasks:
