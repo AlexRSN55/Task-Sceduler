@@ -6,7 +6,7 @@ HELP = """
 /show - print all tasks in list.
 /random - add random task on date "today"
 """
-RANDOM_TASKS = ["Python", "Linux", "Kubernetes", "Docker", "Ansible", "CI/CD"]
+RANDOM_TASKS = ["Python", "Java", "Kubernetes", "Docker", "Ansible", "CI/CD"]
 
 tasks = {}
 
